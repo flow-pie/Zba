@@ -10,11 +10,8 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-import com.example.zba.HelperClass;
+import com.example.zba.models.UserModel;
 import com.example.zba.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -87,7 +84,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                         reference = FirebaseDatabase.getInstance().getReference("users");
 
-                        HelperClass helper = new HelperClass(usernametxt, emailtxt, passwordtxt);
+                        UserModel helper = new UserModel(usernametxt, emailtxt, passwordtxt);
                         reference.child(userId).setValue(helper).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> dbTask) {
