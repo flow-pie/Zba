@@ -17,7 +17,7 @@ public class PasswordItem {
     }
 
     public String getUserName(){return  this.userName;}
-    private  String setUserName (String username) {return userName = username;}
+    public  void setUserName (String username) { userName = username; }
 
     public String getAppName() {
         return appName;
