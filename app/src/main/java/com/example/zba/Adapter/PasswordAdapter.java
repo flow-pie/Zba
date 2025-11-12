@@ -63,4 +63,5 @@ public class PasswordAdapter extends RecyclerView.Adapter<PasswordAdapter.Passwo
 
         }
     }
+
 }

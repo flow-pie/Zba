@@ -1,6 +1,6 @@
-package com.example.zba;
+package com.example.zba.models;
 
-public class HelperClass {
+public class UserModel {
     String username;
     String email;
     String password;
@@ -28,12 +28,12 @@ public class HelperClass {
         this.username = username;
     }
 
-    public HelperClass(String username, String email, String password) {
+    public UserModel(String username, String email, String password) {
         this.username = username;
         this.email = email;
         this.password = password;
     }
 
-    public HelperClass() {
+    public UserModel() {
     }
 }

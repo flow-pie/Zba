@@ -31,6 +31,17 @@ public class PasswordRepository {
             }
         }
     }
+    public static boolean updatePassword(String id, String newAppName, String newUsername, String newPassword) {
+        for (PasswordItem item : passwordList) {
+            if (item.getId().equals(id)) {
+                item.setAppName(newAppName);
+                item.setUserName(newUsername);
+                item.setPassword(newPassword);
+                return true;
+            }
+        }
+        return false;
+    }
 
     public static void clear(){
         passwordList.clear();

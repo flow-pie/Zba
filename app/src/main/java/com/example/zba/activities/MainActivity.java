@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -59,6 +60,15 @@ public class MainActivity extends AppCompatActivity implements OnPasswordClickLi
     @Override
     protected void onResume() {
         super.onResume();
+        Log.d("PasswordRepoDebug", "---- Current Password List ----");
+        for (PasswordItem item : PasswordRepository.getPasswords()) {
+            Log.d("PasswordRepoDebug",
+                    "ID: " + item.getId() +
+                            " | App: " + item.getAppName() +
+                            " | Username: " + item.getUserName() +
+                            " | Password: " + item.getPassword());
+        }
+        Log.d("PasswordRepoDebug", "--------------------------------");
         passwordAdapter.notifyDataSetChanged();
         updateUI();
     }
