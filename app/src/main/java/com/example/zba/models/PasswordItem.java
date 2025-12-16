@@ -9,11 +9,14 @@ public class PasswordItem {
     private String password;
     private  String id;
 
-    public PasswordItem(String password, String id, String appName, String userName) {
-        this.password = password;
+    // REQUIRED by Firestore
+    public PasswordItem() {
+    }
+    public PasswordItem(String id, String appName, String userName, String password) {
         this.id = id;
         this.appName = appName;
         this.userName = userName;
+        this.password = password;
     }
 
     public String getUserName(){return  this.userName;}
@@ -40,4 +43,7 @@ public class PasswordItem {
     }
 
 
+    public void setId(String id) {
+        this.id=id;
+    }
 }

@@ -103,11 +103,8 @@ public class AddPasswordActivity extends AppCompatActivity {
             return;
         }
 
-        // TODO: Save to database or SharedPreferences
-        //save in a list atleast for now
-        PasswordItem newItem = new PasswordItem(password, UUID.randomUUID().toString(), appName, username);
+        PasswordItem newItem = new PasswordItem(UUID.randomUUID().toString(),appName, username, password);
         PasswordRepository.addPassword(newItem);
-
         Toast.makeText(this, "Password saved for " + appName, Toast.LENGTH_SHORT).show();
 
         // Finish activity and return to main
